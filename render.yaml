@@ -1,11 +1,11 @@
 services:
   - type: web
     name: ai-writing-assistant
-    env: python
-    buildCommand: pip install -r requirements-render.txt
+    runtime: python
+    buildCommand: pip install --upgrade pip && pip install -r requirements-render.txt
     startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: PYTHON_VERSION
-        value: 3.9.18
+        value: 3.13.4
     plan: free
 

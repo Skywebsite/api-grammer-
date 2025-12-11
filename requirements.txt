@@ -1,7 +1,6 @@
-fastapi==0.103.2
-uvicorn==0.22.0
-transformers==4.29.2
-sentencepiece==0.1.99
-torch==1.13.1
-urllib3<2.0
+fastapi==0.115.0
+uvicorn[standard]==0.32.0
+transformers==4.46.0
+sentencepiece==0.2.0
+torch==2.5.1
 
