@@ -14,8 +14,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# AI Model
-model_name = "pszemraj/flan-t5-large-grammar-synthesis"  # Grammar + rewrite model
+# AI Model - Using smaller model for Render free tier compatibility
+# For local: use "pszemraj/flan-t5-large-grammar-synthesis" (better quality, needs more RAM)
+# For Render free tier: use "pszemraj/flan-t5-base-grammar-synthesis" (smaller, fits 512MB)
+model_name = "pszemraj/flan-t5-base-grammar-synthesis"  # Smaller model for production
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
 
